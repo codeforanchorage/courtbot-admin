@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import Root from '@/components/Root'
 import citation_search from '@/components/citationSearch/citation_search'
 import phone_search from '@/components/citationSearch/phone_search'
+import notification_list from '@/components/notificationList/notifications'
 
 Vue.use(Router)
 
@@ -23,6 +24,12 @@ export default new Router({
         path: '/phone/:phoneHash',
         name: 'Phone-Search',
         component: phone_search,
+        props: true
+    },
+    {
+        path: '/notifications',
+        name: 'Notification-List',
+        component: notification_list,
         props: true
     }
   ]

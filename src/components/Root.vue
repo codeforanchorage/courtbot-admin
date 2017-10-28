@@ -1,47 +1,73 @@
 <template>
-  <div class="hello">
-    <h1>Summary</h1>
+  <div class="root">
+
     <div id="components">
         <div id="summary">
             <casestats class="component"></casestats>
             <reminderstats class="component"></reminderstats>
+            <runnerdates class="component"></runnerdates>
         </div>
-        <actioncounts class="chart_component"></actioncounts>
+        <div id="charts">
+            <h2>Total SMS hits by date</h2>
+
+            <actionsbyday class="chart_component"></actionsbyday>
+            <h2>SMS Hits and Notifications</h2>
+            <h5>Stats for past
+                <span v-on:click="daysback=1"  v-bind:class="{ active: daysback==1}"> Day </span> |
+                <span v-on:click="daysback=7" v-bind:class="{ active: daysback==7}"> Week</span> |
+                <span v-on:click="daysback=30" v-bind:class="{ active: daysback==30}"> Month </span>
+            </h5>
+
+            <div id="counts">
+
+                <actioncounts :daysback="daysback" class="chart_component"></actioncounts>
+                <notificationcounts :daysback="daysback" class="chart_component"></notificationcounts>
+            </div>
+        </div>
     </div>
   </div>
 </template>
 
 <script>
 /* queuedCounts & reminderCounts could probably be merged into a single shared component */
-import queuedstats from '@/components/globalStats/queuedCounts'
 import reminderstats from '@/components/globalStats/reminderCounts'
 import casestats from '@/components/globalStats/caseCounts'
 import actioncounts from '@/components/globalStats/actionCounts'
+import notificationcounts from '@/components/globalStats/notificationCounts'
+import actionsbyday from '@/components/globalStats/actionsByDay'
+import runnerdates from '@/components/globalStats/runnerDates'
 
 export default {
     name: 'root',
     data () {
         return {
-        msg: 'Alaska Courtbot'
+            msg: 'Alaska Courtbot',
+            daysback: 7
         }
     },
     components: {
         reminderstats: reminderstats,
         casestats:casestats,
-        queuedstats:queuedstats,
-        actioncounts: actioncounts
+        actioncounts: actioncounts,
+        actionsbyday: actionsbyday,
+        notificationcounts:notificationcounts,
+        runnerdates
     }
 }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-#components {
+#components, #charts, #counts {
     display:flex;
 }
-.chart_component {
+#charts {
+    flex-direction: column;
     margin-left:2em;
-    padding: 1.5em;
+}
+.chart_component {
+    padding-top: .5em;
+    padding-right: 1.5em;
 }
 .component {
     margin: 1em 1em 0em 0;
@@ -50,11 +76,18 @@ export default {
     max-width: 10em;
     font-size:1.25em;
 }
-h1, h2 {
+h1, h5 {
   font-weight: normal;
   margin-top: 0px;
 }
-
+h2 {
+font-weight: normal;
+  margin-top: 1em;
+  margin-bottom: 0;
+}
+.active {
+    font-weight: bold
+}
 ul {
   list-style-type: none;
   padding: 0;

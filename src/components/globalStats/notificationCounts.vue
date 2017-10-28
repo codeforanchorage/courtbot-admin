@@ -1,6 +1,6 @@
 <template>
     <div>
-        <h1> Incoming requests by type</h1>
+        <h1>Notifications Sent</h1>
         <svg></svg>
     </div>
 </template>
@@ -10,7 +10,7 @@ import config from '@/config.js'
 import barChart from '@/mixins/barChart.js'
 
 export default {
-    name: 'action_counts',
+    name: 'notification_counts',
     data () {
         return {
             counts:[],
@@ -20,8 +20,9 @@ export default {
             svg:{},
             axis_group: {},
             size: {height: 300, width: 500},
-            apiURL: config.API_URL + 'action_counts'
+            apiURL: config.API_URL + 'notification_counts'
         }
+
     },
     mixins: [barChart],
     props: {
@@ -30,7 +31,8 @@ export default {
             default: 7
         },
 
-    },
+    }
+
 }
 
 </script>
