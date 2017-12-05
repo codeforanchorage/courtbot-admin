@@ -37,7 +37,7 @@ export default  {
     methods: {
         findRequests: function(id){
             this.search_error = ""
-            this.$http.get(apiURL, {params: {q: this.phoneHash}})
+            this.$http.get(apiURL, {params: {phone: this.phoneHash}})
             .then(r => r.json())
             .then(r => this.requests = r)
             .catch(e => console.log("error: ", e))

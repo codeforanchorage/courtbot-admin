@@ -29,7 +29,7 @@ export default  {
     props: ['phonehash'],
     methods: {
         getLog: function(){
-            this.$http.get(apiURL,  {params: {q: this.phonehash}})
+            this.$http.get(apiURL,  {params: {phone: this.phonehash}})
             .then(r => r.json())
             .then(r => this.logs = r)
             .catch(e => console.log("error: ", e))

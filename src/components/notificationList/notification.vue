@@ -5,7 +5,7 @@
             {{notification.created_at | moment("dddd, MMMM Do YYYY")}}
         </div>
         <div>
-            ID:  <router-link class="caselink" :to="{name: 'Citation-Search', params:{citationNumber:notification.case_id} }">
+            ID: <router-link class="caselink" :to="{name: 'Citation-Search', params:{citationNumber:notification.case_id} }">
                     {{notification.case_id}}
                 </router-link>
             <p class="eventdate" v-if="notification.event_date">for {{notification.event_date | moment("dddd, MMMM Do YYYY")}}</p>

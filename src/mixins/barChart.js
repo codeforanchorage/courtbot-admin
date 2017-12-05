@@ -1,8 +1,9 @@
 import * as d3 from 'd3'
-
+/**
+ * This is meant to be uses as a mixin for other components
+ */
 export default  {
     mounted: function(){
-        // these functions come from barChart mixin
         this.chartInit()
         this.getCounts()
     },
@@ -16,7 +17,7 @@ export default  {
     },
     methods: {
         getCounts: function(){
-            this.$http.get(this.apiURL, {params: {q: this.daysback}})
+            this.$http.get(this.apiURL, {params: {daysback: this.daysback}})
             .then(r => r.json())
             .then(r => {
                 this.counts = r

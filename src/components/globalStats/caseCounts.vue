@@ -2,7 +2,7 @@
   <div id="stats">
     <h1>Hearings</h1>
     <ul>
-        <li>Number in last import: {{cases.count}}
+        <li>Records: {{cases.count}}
         <li>Imported on: {{cases.date | moment('MMM DD, YYYY')}}</li>
     </ul>
   </div>

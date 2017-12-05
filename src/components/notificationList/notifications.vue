@@ -11,8 +11,6 @@
 </template>
 
 <script>
-
-
 import config from '@/config.js'
 import notification from '@/components/notificationList/notification'
 

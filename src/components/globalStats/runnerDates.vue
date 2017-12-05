@@ -2,7 +2,6 @@
   <div id="runner_stats">
     <h1>Runners</h1>
     <ul>
-        <li><b>Last Run: </b></li>
         <li v-for="runner in runners" v-bind:key="runner.runner">{{runner.runner | _tail}}:
         {{runner.date | moment('MMM DD, YYYY')}} </li>
     </ul>

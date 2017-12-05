@@ -26,7 +26,7 @@ export default {
     methods: {
         findRequests: function(id){
             this.search_error = ""
-            this.$http.get(apiURL,  {params: {q: this.citationNumber}})
+            this.$http.get(apiURL,  {params: {case_id: this.citationNumber}})
             .then(r => r.json())
             .then(r => this.requests = r)
             .catch(e => console.log("error: ", e))

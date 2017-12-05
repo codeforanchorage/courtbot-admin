@@ -9,9 +9,9 @@
         </div>
         <div id="charts">
             <h2>Total SMS hits by date</h2>
-
-            <actionsbyday class="chart_component"></actionsbyday>
+            <actionsbyday></actionsbyday>
             <h2>SMS Hits and Notifications</h2>
+
             <h5>Stats for past
                 <span v-on:click="daysback=1"  v-bind:class="{ active: daysback==1}"> Day </span> |
                 <span v-on:click="daysback=7" v-bind:class="{ active: daysback==7}"> Week</span> |
@@ -19,7 +19,6 @@
             </h5>
 
             <div id="counts">
-
                 <actioncounts :daysback="daysback" class="chart_component"></actioncounts>
                 <notificationcounts :daysback="daysback" class="chart_component"></notificationcounts>
             </div>
@@ -29,7 +28,6 @@
 </template>
 
 <script>
-/* queuedCounts & reminderCounts could probably be merged into a single shared component */
 import reminderstats from '@/components/globalStats/reminderCounts'
 import casestats from '@/components/globalStats/caseCounts'
 import actioncounts from '@/components/globalStats/actionCounts'
@@ -58,16 +56,25 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-#components, #charts, #counts {
+#components{
     display:flex;
+    width:100%;
+}
+
+#counts {
+    display:flex;
+    width:100%;
+    box-sizing: border-box;
+    flex-wrap: wrap;
 }
 #charts {
+    flex-grow: 1;
     flex-direction: column;
     margin-left:2em;
+    overflow: hidden; /* needed for chart to resize properly */
 }
 .chart_component {
     padding-top: .5em;
-    padding-right: 1.5em;
 }
 .component {
     margin: 1em 1em 0em 0;
@@ -101,4 +108,21 @@ li {
 a {
   color: #42b983;
 }
+@media (max-width: 800px){
+    #summary{
+        display:flex;
+        flex-direction: row;
+        justify-content: space-between;
+         border-top: 1px solid steelblue;
+        border-bottom: 1px solid steelblue;
+        font-size:85%;
+    }
+    #components{
+        flex-direction: column;
+    }
+    .component {
+        border-top:none;
+    }
+}
+
 </style>
