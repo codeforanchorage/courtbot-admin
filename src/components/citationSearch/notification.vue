@@ -2,6 +2,10 @@
     <div class="notification">
         <div>{{notification.created_at | moment("dddd, MMMM Do YYYY")}} <br>
             Type: {{notification.type}}
+            <div class="error" v-if="notification.error">
+                Error sending notification:<br>
+                {{notification.error}}
+            </div>
         </div>
     </div>
 </template>
@@ -29,5 +33,9 @@ export default {
        padding-top: .4em;
        margin-bottom:.5em;
        margin-top: .4em;
+   }
+   .error{
+       margin-top: .5em;
+       color:firebrick;
    }
 </style>

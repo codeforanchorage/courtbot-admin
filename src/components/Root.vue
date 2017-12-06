@@ -22,6 +22,9 @@
                 <actioncounts :daysback="daysback" class="chart_component"></actioncounts>
                 <notificationcounts :daysback="daysback" class="chart_component"></notificationcounts>
             </div>
+            <div id="errors">
+                <unusableinput :daysback="daysback"></unusableinput>
+            </div>
         </div>
     </div>
   </div>
@@ -34,6 +37,7 @@ import actioncounts from '@/components/globalStats/actionCounts'
 import notificationcounts from '@/components/globalStats/notificationCounts'
 import actionsbyday from '@/components/globalStats/actionsByDay'
 import runnerdates from '@/components/globalStats/runnerDates'
+import unusableinput from '@/components/globalStats/unusableInput'
 
 export default {
     name: 'root',
@@ -49,6 +53,7 @@ export default {
         actioncounts: actioncounts,
         actionsbyday: actionsbyday,
         notificationcounts:notificationcounts,
+        unusableinput:unusableinput,
         runnerdates
     }
 }
@@ -66,6 +71,7 @@ export default {
     width:100%;
     box-sizing: border-box;
     flex-wrap: wrap;
+    margin-bottom: 2em;
 }
 #charts {
     flex-grow: 1;
