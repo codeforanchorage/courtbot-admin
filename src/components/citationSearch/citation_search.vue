@@ -39,6 +39,7 @@ export default {
     },
     methods: {
         findCitation: function(id){
+            this.$isLoggedIn = true
             this.search_error = ""
             this.$http.get(apiURL,  {params: {case_id: this.citationNumber}})
             .then(r => r.json())

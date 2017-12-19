@@ -1,6 +1,5 @@
 <template>
   <div class="root">
-
     <div id="components">
         <div id="summary">
             <casestats class="component"></casestats>
