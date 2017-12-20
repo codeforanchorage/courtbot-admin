@@ -10,24 +10,19 @@ Vue.config.productionTip = false
 Vue.use(vueResource)
 Vue.use(require('vue-moment'));
 
-/*  Setup routes that require auth
+/*
+    Setup routes that require auth
     This will look at the routes in router.index to see which
     need authentication. This is not a security feature — the backend API requires auth
     so this is only a convenience so users don't see an interface without data when not logged in.
 */
 router.beforeEach((to, from, next) => {
-    if (to.matched.some(record => record.meta.requiresAuth)) {
-        if (!auth.loggedIn) {
-            next({
-                path: '/login',
-            })
-        } else {
-            next()
-        }
+    if (to.matched.some(record => record.meta.requiresAuth) && !auth.loggedIn) {
+        next({ path: '/login' })
     } else {
-      next() // make sure to always call next()!
+        next()
     }
-  })
+})
 
 Vue.http.interceptors.push(function(request, next){
     /* this will set the auth header on all requests */
@@ -37,9 +32,9 @@ Vue.http.interceptors.push(function(request, next){
 
 /* eslint-disable no-new */
 new Vue({
-  el: '#app',
-  router,
-  template: '<App/>',
-  components: { App }
+    el: '#app',
+    router,
+    template: '<App/>',
+    components: { App }
 })
 

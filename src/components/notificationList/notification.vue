@@ -14,7 +14,6 @@
 </template>
 
 <script>
-
 export default {
     name: 'notification',
     props:{
@@ -23,7 +22,6 @@ export default {
         }
     }
 }
-
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->

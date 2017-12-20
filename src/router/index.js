@@ -11,10 +11,10 @@ Vue.use(Router)
 export default new Router({
   routes: [
     {
-      path: '/',
-      name: 'Root',
-      meta: { requiresAuth: true },
-      component: Root
+        path: '/',
+        name: 'Root',
+        meta: { requiresAuth: true },
+        component: Root
     },
     {
         path: '/login',

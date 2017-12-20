@@ -50,11 +50,11 @@ a:hover {
     color: steelblue;
 }
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  color: #2c3e50;
-  margin: 20px 20px 20px 20px;
+    font-family: 'Avenir', Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    color: #2c3e50;
+    margin: 20px 20px 20px 20px;
 }
 #header {
     margin-top:30px;
@@ -66,33 +66,33 @@ h1 {
 }
 form { position: relative;}
 input {
-  font-size:18px;
-  padding:10px 10px 5px 5px;
-  display:block;
-  width:300px;
-  border:none;
-  border-bottom:1px solid steelblue;
+    font-size:18px;
+    padding:10px 10px 5px 5px;
+    display:block;
+    width:300px;
+    border:none;
+    border-bottom:1px solid steelblue;
 }
 
 input:focus { outline:none; }
 
 label {
-  color:#999;
-  font-size:1em;
-  font-weight:normal;
-  position:absolute;
-  pointer-events:none;
-  left:5px;
-  top:1em;
-  transition:0.2s ease all;
-  -moz-transition:0.2s ease all;
-  -webkit-transition:0.2s ease all;
+    color:#999;
+    font-size:1em;
+    font-weight:normal;
+    position:absolute;
+    pointer-events:none;
+    left:5px;
+    top:1em;
+    transition:0.2s ease all;
+    -moz-transition:0.2s ease all;
+    -webkit-transition:0.2s ease all;
 }
 
 input:focus ~ label, input:valid ~ label {
-  top:-20px;
-  font-size:1em;
-  color: steelblue;
+    top:-20px;
+    font-size:1em;
+    color: steelblue;
 }
 #user {
     position:absolute;

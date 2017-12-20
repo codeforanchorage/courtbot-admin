@@ -15,7 +15,6 @@
 
 
 <script>
-
 import request from './request.vue'
 import phonelog from './phone_log.vue'
 import config from '@/config.js'
@@ -52,7 +51,6 @@ export default  {
         this.findRequests(this.citationNumber)
     }
 }
-
 </script>
 
 <style>

@@ -41,7 +41,6 @@ export default {
         this.findRequests(this.citationNumber)
     }
 }
-
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->

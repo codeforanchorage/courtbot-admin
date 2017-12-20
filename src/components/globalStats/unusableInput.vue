@@ -41,8 +41,7 @@ export default {
     },
     created: function(){
         this.getCounts()
-    },
-
+    }
 }
 </script>
 

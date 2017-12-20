@@ -15,7 +15,6 @@
 </template>
 
 <script>
-
 import config from '@/config.js'
 const apiURL = config.API_URL + 'phonelog'
 export default  {
@@ -39,7 +38,6 @@ export default  {
         this.getLog(this.phonehash)
     }
 }
-
 </script>
 
 <style>

@@ -39,7 +39,6 @@ export default {
         this.findNotifications()
     }
 }
-
 </script>
 
 <style scoped>

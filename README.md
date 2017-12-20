@@ -1,6 +1,9 @@
 # admin-interface
 
-> Interface for courtbot app admin and logging
+Interface for courtbot app admin and logging.
+
+### Configuration
+The only configuration requred is the URL of the admin API set with `API_URL` in `config.js`. This should point to the courtbot admin api root.
 
 ## Build Setup
 
