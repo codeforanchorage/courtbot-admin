@@ -37,6 +37,7 @@ export default {
 <style scoped>
     g.axis{
         font-size: 12px;
+         text-transform: capitalize;
     }
     .bar_text {
         font-size: 12px;
@@ -57,4 +58,5 @@ export default {
         margin-bottom: 1em;
         text-transform: uppercase;
     }
+
 </style>

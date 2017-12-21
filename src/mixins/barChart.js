@@ -38,6 +38,7 @@ export default  {
             .range([0, this.size.height])
 
             this.axis.y = d3.axisLeft(this.scale.y)
+            .tickFormat(d => d.replace('_', ' '))
 
             var STYLE_MODULE_NAME = this.$el.attributes[0].name;
 
@@ -54,7 +55,6 @@ export default  {
             .range([0, this.size.width]);
 
             this.scale.y.domain(data.map(d => d.type))
-
             this.axis_group.y
             .transition(t)
             .call(this.axis.y);

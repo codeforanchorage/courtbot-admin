@@ -30,9 +30,7 @@ export default {
             type: Number,
             default: 7
         },
-
     }
-
 }
 
 </script>
@@ -40,6 +38,7 @@ export default {
 <style scoped>
     g.axis{
         font-size: 12px;
+        text-transform: capitalize;
     }
     .bar_text {
         font-size: 12px;
