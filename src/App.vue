@@ -12,6 +12,9 @@
     </div>
 
     <router-view></router-view>
+    <div id="footer">
+         A <a href="http://codeforanchorage.org">Code for Anchorage</a> project
+    </div>
   </div>
 </template>
 
@@ -112,5 +115,12 @@ input:focus ~ label, input:valid ~ label {
 #user button:hover{
     background-color: white;
     color: steelblue;
+}
+#footer {
+    margin-top: 3em;
+    font-size: .75em;
+    padding-top: 1em;
+    padding-bottom: .5em;
+    text-transform: uppercase;
 }
 </style>

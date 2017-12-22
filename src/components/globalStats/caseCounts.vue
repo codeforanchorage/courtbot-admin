@@ -3,7 +3,7 @@
     <h1>Hearings</h1>
     <ul>
         <li>Records: {{cases.count}}
-        <li>Imported on: {{cases.date | moment('MMM DD, YYYY')}}</li>
+        <li>Imported: {{cases.date | moment('MMM DD, YYYY')}}</li>
     </ul>
   </div>
 </template>

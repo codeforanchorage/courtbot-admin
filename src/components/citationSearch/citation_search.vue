@@ -61,12 +61,12 @@ export default {
 
 <style scoped>
     #listing {
-            display: flex;
+        display: flex;
+        border-top: 1px solid #eee;
+        border-bottom: 1px solid #eee;
     }
     #case_record, #request_list {
         padding: 1em 2em 2em 1em;
-        border-top: 2px solid #eee;
-        border-bottom: 2px solid #eee;
     }
     #case_record{
         flex-basis: 30%;

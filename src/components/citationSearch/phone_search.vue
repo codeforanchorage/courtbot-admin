@@ -56,11 +56,11 @@ export default  {
 <style>
     #listing{
         display: flex;
+        border-top: 1px solid #eee;
+        border-bottom: 1px solid #eee;
     }
     #phoneLog, #request_list {
         padding: 1em 2em 2em 1em;
-        border-top: 2px solid #eee;
-        border-bottom: 2px solid #eee;
     }
 </style>
 

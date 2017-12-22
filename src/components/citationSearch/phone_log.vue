@@ -41,10 +41,6 @@ export default  {
 </script>
 
 <style>
-    table{
-        border-top: 4px solid #aaa;
-        border-bottom: 4px solid #aaa;
-    }
     th {
         text-align: left;
         padding:.5em;
