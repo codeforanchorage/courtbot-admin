@@ -18,7 +18,7 @@ export default {
                 width:900,
                 height: 300
                 },
-            margin:  { top: 20, right: 25, bottom: 20, left:  25 },
+            margin:  { top: 20, right: 15, bottom: 20, left:  25 },
             scale:{},
             axis:{},
             axis_group:{},
@@ -89,7 +89,8 @@ export default {
 
             this.axis_group.x =  this.svg.append("g")
                 .attr("class", "axis axis--x")
-                .attr("transform", `translate(0, ${height})`);
+                .attr("transform", `translate(0, ${height + 1})`);
+                // +1 is to account for the white border on graph elements
 
             this.axis_group.y =  this.svg.append("g")
                 .attr("class", "axis axis--y")

@@ -65,8 +65,9 @@ export default {
         border-top: 1px solid #eee;
         border-bottom: 1px solid #eee;
     }
-    #case_record, #request_list {
-        padding: 1em 2em 2em 1em;
+     #case_record, #request_list {
+        padding-left: 2em ;
+        padding-right: 1em ;
     }
     #case_record{
         flex-basis: 30%;
@@ -81,5 +82,22 @@ export default {
         padding: 25px;
         width: 80%;
     }
+    @media screen and (max-width: 800px){
+         #listing{
+             box-sizing: border-box;
+             flex-direction: column;
+         }
+         #phoneLog table{
+             width: 100%;
+         }
+        #case_record, #request_list {
+            padding-left: .2em;
+            padding-right: .2em;
+            padding-top: 0;
+            padding-bottom: 0;
+            font-size: .9em;
+        }
+    }
+
 </style>
 

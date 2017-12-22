@@ -102,7 +102,9 @@ input:focus ~ label, input:valid ~ label {
     right: 15px;
     top: 10px;
     border: 1px solid steelblue;
-    padding-left: .3em;
+    padding-left: .5em;
+    font-size: .875em;
+    border-radius: 5px 0 0 5px;
 }
 #user button{
     background-color: steelblue;
@@ -112,6 +114,7 @@ input:focus ~ label, input:valid ~ label {
     margin:0px;
     padding: .5em;
 }
+
 #user button:hover{
     background-color: white;
     color: steelblue;
@@ -123,4 +126,10 @@ input:focus ~ label, input:valid ~ label {
     padding-bottom: .5em;
     text-transform: uppercase;
 }
+@media (max-width: 600px){
+    #app{
+        margin:5px;
+    }
+}
+
 </style>

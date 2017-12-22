@@ -128,5 +128,9 @@ a {
     .component {
         border-top:none;
     }
+    #charts {
+        padding:0;
+        margin:0;
+    }
 }
 </style>

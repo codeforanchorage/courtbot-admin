@@ -48,4 +48,11 @@ export default {
     .citationDetail {
        font-size: .75em
     }
+    @media screen and (max-width: 800px){
+       #record, #requests {
+        padding: 0;
+        padding-bottom: .5em;
+    }
+    }
+
 </style>
