@@ -155,6 +155,10 @@ export default {
             }, 150)
         }
     },
+    beforeDestroy: function(){
+        /* remove resize handler when component is gone, otherwise it throws errors on resize */
+        window.onresize = null
+    },
     watch: {
         daysback: function(){
         this.getCounts()

@@ -1,21 +1,21 @@
 <template>
 <div id="loginContainer">
     <form id="login" v-on:submit.prevent="sendLogin($event)" >
-       <fieldset>
-        <legend>Login</legend>
-        <p>
-            <input type="text" class="header"  v-model="user" required />
-            <label>User Name</label>
-        </p>
-        <p>
-            <input type="password" class="header"  v-model="password" required />
-            <label>Password</label>
-        </p>
-        <button type="submit" v-if="!loading">Login</button>
-        <div id="loading" v-if="loading">Loading</div>
-        <span id="error" v-if="error">{{error}}</span>
-       </fieldset>
-        </form>
+        <fieldset>
+            <legend>Login</legend>
+            <p>
+                <input type="text" class="header"  v-model="user" required />
+                <label>User Name</label>
+            </p>
+            <p>
+                <input type="password" class="header"  v-model="password" required />
+                <label>Password</label>
+            </p>
+            <button type="submit" v-if="!loading">Login</button>
+            <div id="loading" v-if="loading">Loading</div>
+            <span id="error" v-if="error">{{error}}</span>
+        </fieldset>
+    </form>
 </div>
 </template>
 
@@ -107,40 +107,36 @@ export default {
         background-color: white;
     }
     input {
-    font-size:18px;
-    padding:10px 10px 5px 5px;
-    display:block;
-    width:300px;
-    border:none;
-    border-bottom:1px solid steelblue;
+        font-size:18px;
+        padding:10px 10px 5px 5px;
+        display:block;
+        width:300px;
+        border:none;
+        border-bottom:1px solid steelblue;
     }
     form p {
         position: relative;
         margin-top: 1.5em;
     }
     input:focus { outline:none; }
-
     label {
-    color:#999;
-    font-size:1em;
-    font-weight:normal;
-    position:absolute;
-    pointer-events:none;
-    left:5px;
-    top:1em;
-    transition:0.2s ease all;
-    -moz-transition:0.2s ease all;
-    -webkit-transition:0.2s ease all;
+        color:#999;
+        font-size:1em;
+        font-weight:normal;
+        position:absolute;
+        pointer-events:none;
+        left:5px;
+        top:1em;
+        transition:0.2s ease all;
+        -moz-transition:0.2s ease all;
+        -webkit-transition:0.2s ease all;
     }
-
     input:focus ~ label, input:valid ~ label {
-    top:-20px;
-    font-size:1em;
-    color: steelblue;
+        top:-20px;
+        font-size:1em;
+        color: steelblue;
     }
-
     #error{
         color:darkred
     }
-
 </style>
