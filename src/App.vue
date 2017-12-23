@@ -137,7 +137,7 @@ input:focus ~ label, input:valid ~ label {
     font-size: .875em;
     margin:0px;
     padding: .5em;
-    padding-right: 1em;
+    padding-right: 2em;
     height: 100%;
 }
 
