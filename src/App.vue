@@ -1,17 +1,16 @@
 <template>
   <div id="app">
     <div id="header">
-        <router-link :to="{name: 'Root'}"><h1>Alaska Courtbot</h1></router-link>
-        <form  v-on:submit.prevent="goToCitation($event)" v-if = 'auth.loggedIn'>
-            <input type="text" class="header"  v-model="citationNumber" required />
-            <label>Search Citation ID</label>
-        </form>
+        <router-link :to="{name: 'Root'}"><h1>Courtbot Admin</h1></router-link>
         <div id = "user" v-if = 'auth.loggedIn' >
             {{auth.user}} <button v-on:click="logout">logout</button>
         </div>
     </div>
-
-    <router-view></router-view>
+    <form  v-on:submit.prevent="goToCitation($event)" v-if = 'auth.loggedIn'>
+            <input type="text" class="header"  v-model="citationNumber" required />
+            <label>Search Citation ID</label>
+        </form>
+    <router-view id="routerview"></router-view>
     <div id="footer">
          A <a href="http://codeforanchorage.org">Code for Anchorage</a> project
     </div>
@@ -43,38 +42,62 @@
         }
     }
 </script>
-
 <style>
-a {
-    text-decoration: none;
-    color: #2c3e50;
+    a {
+        text-decoration: none;
+        color: #2c3e50;
+    }
+    a:hover {
+        color: steelblue;
+    }
+    h3 {
+        text-transform: uppercase;
+        font-size: 1em;
+    }
+</style>
+<style scoped>
+#routerview {
+    margin: 3.5em 1em 0 1em;
+    clear: both;
+    padding-bottom: 80px;
 }
-a:hover {
-    color: steelblue;
-}
+
 #app {
+    position: relative;
     font-family: 'Avenir', Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     color: #2c3e50;
-    margin: 20px 20px 20px 20px;
+    margin: 0px 0px 0px 0px;
+    min-height: 100%;
 }
 #header {
-    margin-top:30px;
-    margin-bottom: 50px;
+    position: relative;
     display: flex;
+    background-color:steelblue;
+    padding:0px 20px 0px 20px;
 }
 h1 {
     margin:2px 1em 2px 2px;
+    font-size: 1.5em;
+    color: white;
+    font-weight: normal;
 }
-form { position: relative;}
+form {
+    position: relative;
+    float: right;
+    margin-right: 1em;
+    }
 input {
-    font-size:18px;
-    padding:10px 10px 5px 5px;
+    font-size:16px;
+    background-color: #fcfcfc;
+    color: grey;
+    font-weight: normal;
+    padding:10px 10px 8px 5px;
     display:block;
     width:300px;
     border:none;
-    border-bottom:1px solid steelblue;
+    border-bottom:1px solid lightgray;
 }
 
 input:focus { outline:none; }
@@ -93,26 +116,28 @@ label {
 }
 
 input:focus ~ label, input:valid ~ label {
-    top:-20px;
+    top:2.5em;
     font-size:1em;
     color: steelblue;
 }
 #user {
     position:absolute;
-    right: 15px;
-    top: 10px;
-    border: 1px solid steelblue;
+    right: 0px;
+    top: 0px;
     padding-left: .5em;
     font-size: .875em;
-    border-radius: 5px 0 0 5px;
+    height: 100%;
 }
 #user button{
+    position: relative;
     background-color: steelblue;
     color: white;
     border: none;
     font-size: .875em;
     margin:0px;
     padding: .5em;
+    padding-right: 1em;
+    height: 100%;
 }
 
 #user button:hover{
@@ -120,29 +145,19 @@ input:focus ~ label, input:valid ~ label {
     color: steelblue;
 }
 #footer {
-    margin-top: 3em;
+    position: absolute;
+    bottom: 0px;
     font-size: .75em;
-    padding-top: 1em;
-    padding-bottom: .5em;
     text-transform: uppercase;
+    height: 25px;
+    text-align: center;
+    width: 100%;
 }
-@media (max-width: 600px){
-    #app{
-        margin:10px;
-        margin-top: 50px;
-    }
-    #header {
-        margin-bottom:20px;
-        margin-top: 30px;
-    }
-    #user {
-        left:15px;
-        right: auto;
-        font-size: .75em;
-    }
-    input {
-        width: 100%;
-        padding-right: 0;
+@media (max-width: 800px){
+    form {
+        float: left;
+        margin-bottom: 2em;
+        margin-left: 1.25em;
     }
 }
 

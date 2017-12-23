@@ -1,7 +1,7 @@
 <template>
     <div id="citation">
         <div id="record">
-          <h3>{{record.defendant}}</h3>
+          <h4>{{record.defendant}}</h4>
             <h5 v-if="record.type"> {{record.type}}</h5>
             {{record.date | moment("dddd, MMMM Do YYYY")}} | {{record.date | moment("h:mm A")}}<br>
             {{record.room}}
@@ -33,8 +33,8 @@ export default {
     h5{
         font-weight: normal;
         text-transform: uppercase;
-        margin-bottom: 0px;
-        margin-top:0px;
+        margin-bottom: .25em;
+        margin-top:.25em;
     }
     #record, #requests {
         padding: 1em 2em 2em 1em;
@@ -42,8 +42,9 @@ export default {
     #citation>div{
         margin: 0px 2em 0px 0px;
     }
-    h3 {
+    h4 {
        font-size: 1em;
+       margin-bottom: 0;
     }
     .citationDetail {
        font-size: .75em

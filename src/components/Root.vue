@@ -1,16 +1,17 @@
 <template>
-  <div class="root">
+  <div id="root">
     <div id="components">
         <div id="summary">
+            <h1>Status</h1>
             <casestats class="component"></casestats>
             <reminderstats class="component"></reminderstats>
             <runnerdates class="component"></runnerdates>
         </div>
         <div id="charts">
             <h2>Total SMS hits by date</h2>
-            <actionsbyday></actionsbyday>
-            <h2>SMS Hits and Notifications</h2>
+            <actionsbyday class="chartComponent"></actionsbyday>
 
+            <h2>SMS Hits and Notifications</h2>
             <h5>Stats for past
                 <span v-on:click="daysback=1"  v-bind:class="{ active: daysback==1}"> Day </span> |
                 <span v-on:click="daysback=7" v-bind:class="{ active: daysback==7}"> Week</span> |
@@ -18,8 +19,8 @@
             </h5>
 
             <div id="counts">
-                <actioncounts :daysback="daysback" class="chart_component"></actioncounts>
-                <notificationcounts :daysback="daysback" class="chart_component"></notificationcounts>
+                <actioncounts :daysback="daysback" ></actioncounts>
+                <notificationcounts :daysback="daysback" ></notificationcounts>
             </div>
             <div id="errors">
                 <unusableinput :daysback="daysback"></unusableinput>
@@ -60,9 +61,25 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+#root {
+    box-sizing: border-box;
+    margin: 0px 20px 20px 20px;
+}
+.chartComponent{
+    margin-bottom: 2em;
+}
 #components{
     display:flex;
     width:100%;
+}
+#summary {
+    margin-right: 1em;
+    margin-left: 1em;
+}
+#summary h1{
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-top: 0;
 }
 
 #counts {
@@ -78,36 +95,35 @@ export default {
     margin-left:2em;
     overflow: hidden; /* needed for chart to resize properly */
 }
-.chart_component {
-    padding-top: .5em;
-}
+
 .component {
-    margin: 1em 1em 0em 0;
-    padding: 1em;
-    border-top: 2px solid steelblue;
-    max-width: 10em;
-    font-size:1.25em;
+    margin: .5em 1em 0em 0;
+    padding-bottom: 1em;
+    width: 9em;
+    font-size:1em;
+    line-height: 150%;
 }
+
 h1, h5 {
-  font-weight: normal;
-  margin-top: 0px;
+    font-weight: normal;
+    margin-top: 0px;
 }
 h2 {
-font-weight: normal;
-  margin-top: 1em;
-  margin-bottom: 0;
+    font-weight: normal;
+    margin-top: 0;
+    margin-bottom: 0;
 }
 .active {
     font-weight: bold
 }
 ul {
-  list-style-type: none;
-  padding: 0;
+    list-style-type: none;
+    padding: 0;
 }
 
 li {
-  display: inline-block;
-  margin: 0 10px;
+    display: inline-block;
+    margin: 0 10px;
 }
 
 a {
@@ -118,9 +134,12 @@ a {
         display:flex;
         flex-direction: row;
         justify-content: space-between;
-         border-top: 1px solid steelblue;
-        border-bottom: 1px solid steelblue;
-        font-size:85%;
+         border-top: 1px solid lightgrey;
+        border-bottom: 1px solid lightgrey;
+
+    }
+    #summary h1 {
+        display: none;
     }
     #components{
         flex-direction: column;

@@ -72,9 +72,6 @@ export default {
     #case_record{
         flex-basis: 30%;
     }
-    div.citation_search {
-        width: 100%;
-    }
     div.error {
         margin-top:20px;
         padding: 5px;

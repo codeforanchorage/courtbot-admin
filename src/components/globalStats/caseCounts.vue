@@ -46,6 +46,7 @@ export default {
     }
     h1 {
         font-size: 1em;
+        color: grey;
         margin:0px;
         text-transform: uppercase;
 
