@@ -78,7 +78,7 @@ export default {
 }
 #summary h1{
     font-size: 1.5em;
-    font-weight: bold;
+    font-weight: normal;
     margin-top: 0;
 }
 
@@ -134,8 +134,9 @@ a {
         display:flex;
         flex-direction: row;
         justify-content: space-between;
-         border-top: 1px solid lightgrey;
+        border-top: 1px solid lightgrey;
         border-bottom: 1px solid lightgrey;
+        margin: 0px 0px 20px 0px
 
     }
     #summary h1 {

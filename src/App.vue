@@ -79,9 +79,10 @@
 }
 h1 {
     margin:2px 1em 2px 2px;
-    font-size: 1.5em;
+    font-size: 1.25em;
     color: white;
-    font-weight: normal;
+    font-weight: 400;
+    text-transform: uppercase;
 }
 form {
     position: relative;
