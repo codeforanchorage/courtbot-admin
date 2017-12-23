@@ -1,6 +1,7 @@
 <template>
-<div>
+<div id="loginContainer">
     <form id="login" v-on:submit.prevent="sendLogin($event)" >
+       <fieldset>
         <legend>Login</legend>
         <p>
             <input type="text" class="header"  v-model="user" required />
@@ -13,8 +14,9 @@
         <button type="submit" v-if="!loading">Login</button>
         <div id="loading" v-if="loading">Loading</div>
         <span id="error" v-if="error">{{error}}</span>
+       </fieldset>
         </form>
-    </div>
+</div>
 </template>
 
 <script>
@@ -63,18 +65,46 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+   #loginContainer{
+       position:absolute;
+       top:0px;
+       left:0px;
+       width: 100%;
+       height: 100%;
+       background-color: #fafafa;
+       opacity: .85;
+   }
    form {
-        position: relative;
+        position: absolute;
+        top: 50%;
         width: min-content;
+        background-color: white;
+        padding: 2em;
+        margin-left: 50%;
+        transform: translate(-50%, -60%);
+        border-radius: 5px;
+        box-shadow: 2px 2px 10px 3px #eee;
+    }
+    fieldset {
+        border: 9px solid steelblue;
         padding: 2em;
         padding-top: 1em;
-        border: 1px solid steelblue;
-        margin-left: auto;
-        margin-right: auto;
-
+        border-radius: 5px;
+    }
+    button {
+        margin-top: 2em;
+        border: none;
+        padding: .75em;
+        background-color: steelblue ;
+        color: white;
+        border-radius: 5px;
+        font-weight: bold;
+        font-size:.75em;
     }
     legend{
         font-weight: 800;
+        padding: 0 1em 0 1em;
+        background-color: white;
     }
     input {
     font-size:18px;
@@ -86,7 +116,7 @@ export default {
     }
     form p {
         position: relative;
-        margin-top: 2.5em;
+        margin-top: 1.5em;
     }
     input:focus { outline:none; }
 
