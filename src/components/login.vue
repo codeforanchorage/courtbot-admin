@@ -10,9 +10,9 @@
             <input type="password" class="header"  v-model="password" required />
             <label>Password</label>
         </p>
-        <button type="submit">Login</button>
-                <span id="error" v-if="error">{{error}}</span>
-
+        <button type="submit" v-if="!loading">Login</button>
+        <div id="loading" v-if="loading">Loading</div>
+        <span id="error" v-if="error">{{error}}</span>
         </form>
     </div>
 </template>
@@ -29,14 +29,18 @@ export default {
         return {
             user: '',
             password: '',
-            error: undefined
+            error: undefined,
+            loading: false
         }
     },
     methods:{
         sendLogin: function(e){
+            this.loading = true
+            this.error=false
             this.$http.post(apiURL, {user: this.user, password: this.password} )
             .then(r => r.json())
             .then(r => {
+                this.loading = false
                 if(r.token){
                     auth.token =  r.token
                     this.$router.push('/')
@@ -44,6 +48,7 @@ export default {
                 console.log("recieved token", r)
                 })
             .catch(err => {
+                this.loading = false
                 this.error = err.body.message
                 this.password = ''
                 e.target.reset() // brings placeholder text back in safari

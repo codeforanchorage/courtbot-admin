@@ -128,7 +128,21 @@ input:focus ~ label, input:valid ~ label {
 }
 @media (max-width: 600px){
     #app{
-        margin:5px;
+        margin:10px;
+        margin-top: 50px;
+    }
+    #header {
+        margin-bottom:20px;
+        margin-top: 30px;
+    }
+    #user {
+        left:15px;
+        right: auto;
+        font-size: .75em;
+    }
+    input {
+        width: 100%;
+        padding-right: 0;
     }
 }
 
