@@ -65,14 +65,15 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-   #loginContainer{
+   #routerview{
        position:absolute;
+       margin: 0px !important;
        top:0px;
        left:0px;
        width: 100%;
        height: 100%;
        background-color: #fafafa;
-       opacity: .85;
+       opacity: .75;
    }
    form {
         position: absolute;
@@ -110,7 +111,7 @@ export default {
         font-size:18px;
         padding:10px 10px 5px 5px;
         display:block;
-        width:300px;
+        max-width:400px;
         border:none;
         border-bottom:1px solid steelblue;
     }
@@ -138,5 +139,8 @@ export default {
     }
     #error{
         color:darkred
+    }
+    @media (max-width: 800px){
+
     }
 </style>
