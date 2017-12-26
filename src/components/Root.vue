@@ -11,7 +11,7 @@
             <h2>Total SMS hits by date</h2>
             <actionsbyday class="chartComponent"></actionsbyday>
 
-            <h2>SMS Hits and Notifications</h2>
+            <h2>SMS Hits and Notifications <span id="notificationLink">[ <router-link :to="{name: 'Notification-List'}"> recent notifictions</router-link> ] </span></h2>
             <h5>Stats for past
                 <span v-on:click="daysback=1"  v-bind:class="{ active: daysback==1}"> Day </span> |
                 <span v-on:click="daysback=7" v-bind:class="{ active: daysback==7}"> Week</span> |
@@ -95,7 +95,9 @@ export default {
     margin-left:2em;
     overflow: hidden; /* needed for chart to resize properly */
 }
-
+#notificationLink {
+    font-size: .6875em;
+}
 .component {
     margin: .5em 1em 0em 0;
     padding-bottom: 1em;
@@ -127,8 +129,12 @@ li {
 }
 
 a {
-  color: #42b983;
+  color: steelblue;
 }
+a:hover {
+  color: grey;
+}
+
 @media (max-width: 800px){
     #summary{
         display:flex;
