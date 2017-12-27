@@ -176,7 +176,7 @@ export default {
     }
     ul.legend li{
         display: inline-block;
-        margin-left: 1em;
+        margin-right: 1em;
         text-transform: capitalize;
         font-size: .75em;
         padding: 0px;
