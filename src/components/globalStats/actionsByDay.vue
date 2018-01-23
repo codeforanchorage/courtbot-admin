@@ -13,7 +13,7 @@ export default {
     data () {
         return {
             action_counts:[],
-            action_keys: ['schedule_unmatched', 'schedule_reminder', 'delete_request', 'found_case', 'already_subscribed', 'unmatched_case', 'unusable_input'],
+            action_keys: [ 'already_subscribed', 'decline_reminder', 'delete_request', 'found_case', 'schedule_reminder', 'schedule_unmatched', 'unmatched_case', 'unusable_input'],
             size: {
                 width:900,
                 height: 300
