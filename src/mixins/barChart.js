@@ -57,6 +57,7 @@ export default  {
             this.scale.y.domain(data.map(d => d.type))
             this.axis_group.y
             .transition(t)
+            .attr('style', 'text-transform: capitalize; font-size: 12px') // styling here becuase Edge has problems with css/svg
             .call(this.axis.y);
 
             let bars = this.svg.selectAll(".bar")
@@ -80,6 +81,7 @@ export default  {
 
             group.append('text')
             .attr('class', "bar_text")
+            .attr('style', 'fill:white; font-size:12px')
             .attr(STYLE_MODULE_NAME, '')
             .attr('alignment-baseline', 'middle')
             .attr('text-anchor', 'end')
