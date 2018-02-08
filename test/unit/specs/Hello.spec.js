@@ -1,11 +1,20 @@
 import Vue from 'vue'
-import Hello from '@/components/Hello'
+import vueResource from 'vue-resource'
 
-describe('Hello.vue', () => {
+import Router from 'vue-router'
+import router from '@/router'
+import Root from '@/components/Root'
+
+describe('Root.vue', () => {
   it('should render correct contents', () => {
-    const Constructor = Vue.extend(Hello)
-    const vm = new Constructor().$mount()
-    expect(vm.$el.querySelector('.hello h1').textContent)
-      .to.equal('Welcome to Your Vue.js App')
+    Vue.use(Router)
+    Vue.use(vueResource)
+    Vue.use(require('vue-moment'))
+    const Constructor = Vue.extend(Root)
+    const vm = new Constructor(
+        {router}
+    ).$mount()
+    expect(vm.$el.querySelector('#charts h2').textContent)
+      .to.equal('Total SMS hits by date')
   })
 })
