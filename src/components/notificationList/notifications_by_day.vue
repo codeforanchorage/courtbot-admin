@@ -5,7 +5,7 @@
             Notifictions listed as <i>reminder</i> are sent to users who have a hearing scheduled the next day. Those listed as <i>expired</i> are sent when a user has requested notifications for a case ID that was never found. Notifications marked <i>matched</i> are sent when we first discover a case that the user has asked us to watch for before it was in the system.
             <div id="notifications">
                 <div class="day" v-for='record in records' v-bind:key='record.created_at'>
-                    <h4>{{record.created_at | moment("dddd, MMMM Do YYYY, h:mm a")}} ({{record.notices.length}})</h4>
+                    <h4>{{record.created_at | moment("dddd, MMMM Do YYYY")}} ({{record.notices.length}})</h4>
                     <ul>
                         <notification class="notice" :notification='n' v-for='n in record.notices' v-bind:key='n.created_at'></notification>
                     </ul>
