@@ -2,8 +2,8 @@
   <div id="runner_stats">
     <h1>Runners</h1>
     <ul>
-        <li v-for="runner in runners" v-bind:key="runner.runner">{{runner.runner | _tail}}:
-        {{runner.date | moment('MMM DD, YYYY')}} </li>
+        <li v-for="runner in runners" v-bind:key="runner.runner"><b>{{runner.runner | _tail}}:</b><br>
+        {{runner.date | moment('MMM DD, YYYY, h:mm a')}} </li>
     </ul>
   </div>
 </template>
