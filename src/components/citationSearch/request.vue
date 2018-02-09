@@ -73,7 +73,8 @@ export default {
     }
    .phone {
        font-size:1.5em;
-       padding:.25em;
+       margin:.25em;
+       padding-bottom:0;
    }
 
 </style>

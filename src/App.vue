@@ -50,6 +50,11 @@
     a:hover {
         color: steelblue;
     }
+    a.phone, a.caselink{
+        border-bottom: 1px dotted grey;
+        line-height: 85%;
+        display: inline-block
+    }
     h3 {
         text-transform: uppercase;
         font-size: 1em;
