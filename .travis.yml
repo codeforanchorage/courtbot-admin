@@ -1,10 +1,16 @@
+//.travis.yml
+language: node_js
 sudo: required
-addons:
-  chrome: stable
-before_install:
-  - # start your web application and listen on `localhost`
-  - google-chrome-stable --headless --disable-gpu --remote-debugging-port=4444 http://localhost &
-
+dist: trusty
 language: node_js
 node_js:
-  - "8.9.1"
+  - '8'
+before_script:
+  - export CHROME_BIN=/usr/bin/google-chrome
+  - sudo apt-get update
+  - sudo apt-get install -y libappindicator1 fonts-liberation
+  - wget https://dl.google.com/linux/direct/google-chrome-
+    stable_current_amd64.deb
+  - sudo dpkg -i google-chrome*.deb
+  - export DISPLAY=:99.0
+  - sh -e /etc/init.d/xvfb start
