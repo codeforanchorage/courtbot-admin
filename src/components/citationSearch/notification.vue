@@ -1,6 +1,6 @@
 <template>
     <div class="notification">
-        <div>{{notification.created_at | moment("dddd, MMMM Do YYYY h:mm a")}} <br>
+        <div>{{notification.created_at | moment("dddd, MMMM Do YYYY, h:mm a")}} <br>
             Type: {{notification.type}}
             <span v-if=notification.event_date><br>For Hearing On: {{notification.event_date | moment("MMM Do YYYY, h:mm a")}}</span>
             <div class="error" v-if="notification.error">
