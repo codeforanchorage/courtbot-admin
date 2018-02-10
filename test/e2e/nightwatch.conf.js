@@ -28,7 +28,7 @@ module.exports = {
       desiredCapabilities: {
         browserName: "chrome",
         chromeOptions : {
-          args : ["--no-sandbox"]
+          args : ["--no-sandbox", "headless"]
         },
         acceptSslCerts: true
       },
@@ -36,7 +36,7 @@ module.exports = {
         devServerURL: 'http://localhost:' + (process.env.PORT || config.dev.port)
       }
     },
-    /*
+
     chrome: {
       desiredCapabilities: {
         browserName: 'chrome',
@@ -44,6 +44,5 @@ module.exports = {
         acceptSslCerts: true
       }
     }
-    */
   }
 }
