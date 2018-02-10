@@ -1,9 +1,10 @@
 import Vue from 'vue'
+import Root from '@/components/Root'
+
 import vueResource from 'vue-resource'
 
 import Router from 'vue-router'
 import router from '@/router'
-import Root from '@/components/Root'
 
 describe('Root.vue', () => {
   it('should render correct contents', () => {

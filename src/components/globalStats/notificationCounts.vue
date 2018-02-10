@@ -1,3 +1,8 @@
+<!--
+    Sets up default config for barchart of notifications grouped by type.
+    Actual barchart is created by barChart mixin with data determined by
+    value of apiURL
+-->
 <template>
     <div>
         <h1>Notifications Sent</h1>

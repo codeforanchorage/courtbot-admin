@@ -1,3 +1,7 @@
+<!--
+    Outputs information about a single notification. Used in notification_list.
+-->
+
 <template>
     <li class="notification">
         <div>{{notification.type}}</div>

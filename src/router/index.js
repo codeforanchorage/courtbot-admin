@@ -3,8 +3,7 @@ import Router from 'vue-router'
 import Root from '@/components/Root'
 import citation_search from '@/components/citationSearch/citation_search'
 import phone_search from '@/components/citationSearch/phone_search'
-import notification_list from '@/components/notificationList/notifications'
-import notification_by_day from '@/components/notificationList/notifications_by_day'
+import notification_list from '@/components/notificationList/notification_list'
 
 import login from '@/components/login'
 
@@ -41,7 +40,7 @@ export default new Router({
         path: '/notifications',
         meta: { requiresAuth: true },
         name: 'Notification-List',
-        component: notification_by_day,
+        component: notification_list,
         props: true
     }
   ]

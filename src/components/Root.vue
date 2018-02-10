@@ -43,7 +43,6 @@ export default {
     name: 'root',
     data () {
         return {
-            msg: 'Alaska Courtbot',
             daysback: 7
         }
     },
