@@ -1,6 +1,7 @@
 require('babel-register')
 var config = require('../../config')
 var chromedrive = require('chromedriver')
+
 // http://nightwatchjs.org/gettingstarted#settings-file
 module.exports = {
   src_folders: ['test/e2e/specs'],
