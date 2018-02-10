@@ -25,7 +25,6 @@ module.exports = {
       selenium_port: 9515,
       selenium_host: 'localhost',
       default_path_prefix: "",
-      silent: true,
       desiredCapabilities: {
         browserName: "chrome",
         chromeOptions : {
@@ -37,7 +36,7 @@ module.exports = {
         devServerURL: 'http://localhost:' + (process.env.PORT || config.dev.port)
       }
     },
-
+    /*
     chrome: {
       desiredCapabilities: {
         browserName: 'chrome',
@@ -45,5 +44,6 @@ module.exports = {
         acceptSslCerts: true
       }
     }
+    */
   }
 }
