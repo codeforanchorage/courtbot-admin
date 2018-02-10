@@ -19,8 +19,8 @@
             </h5>
 
             <div id="counts">
-                <actioncounts :daysback="daysback" ></actioncounts>
-                <notificationcounts :daysback="daysback" ></notificationcounts>
+                <actioncounts :daysback="daysback" apiPath="action_counts" title="Incoming requests by type"></actioncounts>
+                <actioncounts :daysback="daysback" apiPath="notification_counts" title="Notifications Sent"></actioncounts>
             </div>
             <div id="errors">
                 <unusableinput :daysback="daysback"></unusableinput>
@@ -33,11 +33,10 @@
 <script>
 import reminderstats from '@/components/globalStats/reminderCounts'
 import casestats from '@/components/globalStats/caseCounts'
-import actioncounts from '@/components/globalStats/actionCounts'
-import notificationcounts from '@/components/globalStats/notificationCounts'
 import actionsbyday from '@/components/globalStats/actionsByDay'
 import runnerdates from '@/components/globalStats/runnerDates'
 import unusableinput from '@/components/globalStats/unusableInput'
+import actioncounts from '@/components/barCharts/actionCounts'
 
 export default {
     name: 'root',
@@ -51,7 +50,6 @@ export default {
         casestats:casestats,
         actioncounts: actioncounts,
         actionsbyday: actionsbyday,
-        notificationcounts:notificationcounts,
         unusableinput:unusableinput,
         runnerdates
     }
