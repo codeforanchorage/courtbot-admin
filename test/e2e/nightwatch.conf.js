@@ -9,7 +9,7 @@ module.exports = {
   custom_assertions_path: ['test/e2e/custom-assertions'],
   globals_path: 'test/e2e/globals.js',
   /* selenum is difficult to run from node on travis ci
-     so this just uses the stand alone chrome driver */
+     so this just uses the standalone chrome driver */
   selenium: {
     start_process: false,
     server_path: require('selenium-server').path,
