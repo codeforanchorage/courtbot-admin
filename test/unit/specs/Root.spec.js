@@ -1,7 +1,6 @@
 import Vue from 'vue'
 import Root from '@/components/Root'
-
-import vueResource from 'vue-resource'
+import axios from 'axios';
 
 import Router from 'vue-router'
 import router from '@/router'
@@ -9,7 +8,7 @@ import router from '@/router'
 describe('Root.vue', () => {
   it('should render correct contents', () => {
     Vue.use(Router)
-    Vue.use(vueResource)
+    Vue.prototype.$http = axios
     Vue.use(require('vue-moment'))
     const Constructor = Vue.extend(Root)
     const vm = new Constructor(
