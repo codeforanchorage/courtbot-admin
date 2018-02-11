@@ -1,3 +1,8 @@
+<!--
+    Displays login panel and sends login to API.
+    On success API should respond with a JWT which is handled
+    by src/auth.js
+-->
 <template>
     <div id="loginContainer">
         <form id="login" v-on:submit.prevent="sendLogin($event)" >
