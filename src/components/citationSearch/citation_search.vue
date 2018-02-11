@@ -25,9 +25,8 @@
 
 import citation from './citation.vue'
 import request_list from './request_list_by_citation.vue'
-import config from '@/config.js'
 
-const apiURL = config.API_URL + 'case'
+const apiURL =  'case'
 
 export default {
     name: 'citation_search',
