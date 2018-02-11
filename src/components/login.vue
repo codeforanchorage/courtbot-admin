@@ -45,7 +45,7 @@ export default {
             this.loading = true
             this.error=false
             this.$http.post(apiURL, {user: this.user, password: this.password} )
-            .then(r => r.json())
+            .then(r => r.data)
             .then(r => {
                 this.loading = false
                 if(r.token){

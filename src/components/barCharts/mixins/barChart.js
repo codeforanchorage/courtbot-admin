@@ -18,9 +18,8 @@ export default  {
     methods: {
         getCounts: function(){
             this.$http.get(this.apiURL, {params: {daysback: this.daysback}})
-            .then(r => r.json())
             .then(r => {
-                this.counts = r
+                this.counts = r.data
             })
             .catch(e => console.log("error: ", e))
         },

@@ -27,8 +27,7 @@ export default {
     methods: {
         getCounts: function(){
             this.$http.get(apiURL)
-            .then(r => r.json())
-            .then(r => this.counts = r)
+            .then(r => this.counts = r.data)
             .catch(e => console.log("error: ", e))
         }
     },

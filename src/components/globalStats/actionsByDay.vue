@@ -37,9 +37,8 @@ export default {
     methods: {
         getCounts: function(){
             this.$http.get(apiURL, {params: {daysback: this.daysback}})
-            .then(r => r.json())
             .then(r => {
-                this.action_counts = r
+                this.action_counts = r.data
                 this.drawChart(this.action_counts)
                 })
             .catch(e => console.log("error: ", e))

@@ -3,13 +3,15 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
-import vueResource from 'vue-resource'
+import axios from 'axios';
+
 import auth from './auth'
 
 Vue.config.productionTip = false
-Vue.use(vueResource)
+//Vue.use(vueResource)
 Vue.use(require('vue-moment'));
 
+Vue.prototype.$http = axios
 /*
     Setup routes that require auth
     This will look at the routes in router.index to see which
@@ -24,11 +26,16 @@ router.beforeEach((to, from, next) => {
     }
 })
 
-Vue.http.interceptors.push(function(request, next){
-    /* this will set the auth header on all requests */
-    request.headers.set('Authorization', 'JWT ' + auth.token)
-    next()
-})
+// Intercept all requests to add auth token //
+axios.interceptors.request.use(
+    config => {
+      config.headers.authorization = 'JWT ' + auth.token;
+      return config;
+    },
+    error => Promise.reject(error)
+  );
+
+
 
 /* eslint-disable no-new */
 new Vue({

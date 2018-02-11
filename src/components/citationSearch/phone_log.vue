@@ -33,8 +33,7 @@ export default  {
     methods: {
         getLog: function(){
             this.$http.get(apiURL,  {params: {phone: this.phonehash}})
-            .then(r => r.json())
-            .then(r => this.logs = r)
+            .then(r => this.logs = r.data)
             .catch(e => console.log("error: ", e))
         }
     },

@@ -38,8 +38,7 @@ export default {
         findNotifications: function(id){
             this.search_error = ""
             this.$http.get(apiURL)
-            .then(r => r.json())
-            .then(r => this.records = r)
+            .then(r => this.records = r.data)
             .catch(e => console.log("error: ", e))
         }
     },

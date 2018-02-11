@@ -13,6 +13,7 @@
     "test": "npm run unit && npm run e2e"
   },
   "dependencies": {
+    "axios": "^0.17.1",
     "d3": "^4.11.0",
     "vue": "^2.4.2",
     "vue-moment": "^2.1.0",

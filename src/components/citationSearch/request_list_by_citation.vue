@@ -28,8 +28,7 @@ export default {
     methods: {
         findRequests: function(id){
             this.$http.get(apiURL,  {params: {case_id: this.citationNumber}})
-            .then(r => r.json())
-            .then(r => this.requests = r)
+            .then(r => this.requests = r.data)
             .catch(e => console.log("error: ", e))
         }
     },
