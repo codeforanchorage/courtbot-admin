@@ -1,3 +1,6 @@
+<!--
+    Small status component to timestamp of runners
+-->
 <template>
   <div id="runner_stats">
     <h1>Runners</h1>

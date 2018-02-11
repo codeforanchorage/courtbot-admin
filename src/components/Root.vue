@@ -4,7 +4,7 @@
         <div id="summary">
             <h1>Status</h1>
             <casestats class="component"></casestats>
-            <reminderstats class="component"></reminderstats>
+            <requeststats class="component"></requeststats>
             <runnerdates class="component"></runnerdates>
         </div>
         <div id="charts">
@@ -31,7 +31,7 @@
 </template>
 
 <script>
-import reminderstats from '@/components/globalStats/reminderCounts'
+import requeststats from '@/components/globalStats/requestCounts'
 import casestats from '@/components/globalStats/caseCounts'
 import actionsbyday from '@/components/globalStats/actionsByDay'
 import runnerdates from '@/components/globalStats/runnerDates'
@@ -46,7 +46,7 @@ export default {
         }
     },
     components: {
-        reminderstats: reminderstats,
+        requeststats: requeststats,
         casestats:casestats,
         actioncounts: actioncounts,
         actionsbyday: actionsbyday,

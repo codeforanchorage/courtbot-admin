@@ -1,3 +1,6 @@
+<!--
+    Small status component showing unusable user input from last daysback days
+-->
 <template>
   <div id="runner_stats">
     <h1>Unusable User Input</h1>

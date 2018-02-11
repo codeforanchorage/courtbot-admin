@@ -1,3 +1,6 @@
+<!--
+    Small status component to show state of the hearings table in the DB
+-->
 <template>
   <div id="stats">
     <h1>Hearings</h1>

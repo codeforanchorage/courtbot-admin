@@ -1,3 +1,6 @@
+<!--
+    Creates the main curvy graph showing breakdown of actions each day over a period defined by daysback.
+-->
 <template>
     <div id="chart_time" ref="chart_time"></div>
 </template>
