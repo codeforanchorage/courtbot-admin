@@ -10,7 +10,7 @@ function resolve (dir) {
 module.exports = {
   entry: {
     app: [
-        'babel-polyfill',
+        'babel-polyfill', // help out IE with things like native Promises
         './src/main.js'
     ]
   },
