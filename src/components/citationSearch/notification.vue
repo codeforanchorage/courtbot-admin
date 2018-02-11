@@ -1,3 +1,6 @@
+<!--
+    Display information about notification passed in as 'notification' prop.
+-->
 <template>
     <div class="notification">
         <div>{{notification.created_at | moment("dddd, MMMM Do YYYY, h:mm a")}} <br>

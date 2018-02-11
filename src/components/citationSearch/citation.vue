@@ -1,3 +1,6 @@
+<!--
+    Displays citation object passed in as 'record' prop.
+-->
 <template>
     <div id="citation">
         <div id="record">

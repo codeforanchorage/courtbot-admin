@@ -1,3 +1,7 @@
+<!--
+    Displays the logs associated with a particular phone number.
+    Pass in a encypted phone number as prop: 'phonehash'.
+-->
 <template>
     <div id="log">
         <h3>{{logs.length}} Texts from this user</h3>

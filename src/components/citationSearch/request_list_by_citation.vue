@@ -1,3 +1,6 @@
+<!--
+    Queries API and displays requests associated with a particular citation/case ID passed in.
+-->
 <template>
     <div id="requests">
         <h3>{{requests.length}} {{requests.length === 1 ? 'Request' : 'Requests'}} Scheduled</h3>
