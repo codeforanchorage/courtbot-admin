@@ -1,3 +1,6 @@
+<!--
+    Component that displays phonelog and request list for passed in (encrypted) phone.
+-->
 <template>
     <div id="phoneReport">
         Phone Report for {{phoneHash}}
@@ -6,8 +9,7 @@
                 <phonelog :phonehash="phoneHash"></phonelog>
             </div>
             <div id="request_list">
-                <h3>{{requests.length}} {{requests.length == 1 ? 'Request' : 'Requests'}} Scheduled</h3>
-                <request :request="request" v-bind:showphone=false v-bind:showcase=true v-for="request in requests" v-bind:key="request.phone"></request>
+                <request_list :phonehash="phoneHash"></request_list>
             </div>
         </div>
     </div>
@@ -15,8 +17,8 @@
 
 
 <script>
-import request from './request.vue'
 import phonelog from './phone_log.vue'
+import request_list from './request_list_by_phone.vue'
 import config from '@/config.js'
 
 const apiURL = config.API_URL + 'requests_by_phone'
@@ -30,25 +32,8 @@ export default  {
         }
     },
     components:{
-        'request': request,
-        'phonelog': phonelog
-    },
-    methods: {
-        findRequests: function(id){
-            this.search_error = ""
-            this.$http.get(apiURL, {params: {phone: this.phoneHash}})
-            .then(r => r.json())
-            .then(r => this.requests = r)
-            .catch(e => console.log("error: ", e))
-        }
-    },
-    watch: {
-        'citationNumber': function(){
-            this.findRequests(this.citationNumber)
-        }
-    },
-    beforeMount: function(){
-        this.findRequests(this.citationNumber)
+        'phonelog': phonelog,
+        'request_list': request_list
     }
 }
 </script>

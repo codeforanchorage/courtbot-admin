@@ -19,16 +19,14 @@ export default {
     data () {
         return {
             requests:[],
-            search_error: ''
         }
     },
-    props: ['citationNumber', 'phone'],
+    props: ['citationNumber'],
     components:{
         'request': request
     },
     methods: {
         findRequests: function(id){
-            this.search_error = ""
             this.$http.get(apiURL,  {params: {case_id: this.citationNumber}})
             .then(r => r.json())
             .then(r => this.requests = r)

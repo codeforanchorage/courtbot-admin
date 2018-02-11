@@ -1,4 +1,8 @@
-<!-- should decrypted phone numbers be available? -->
+<!--
+    Display information about passed in request.
+    Use props 'showphone' and 'showcase' to control whether
+    links to phone and case are displayed.
+-->
 <template>
     <div v-bind:class="['request', {'inactive': !request.active}]">
         <div id="link">
