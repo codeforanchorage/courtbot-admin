@@ -4,7 +4,7 @@
 <template>
     <div id="requests">
         <h3>{{requests.length}} {{requests.length === 1 ? 'Request' : 'Requests'}} Scheduled</h3>
-        <request :request="request" :showphone=false :showcase=true v-for="request in requests" v-bind:key="request.phone"></request>
+        <request :request="request" :showphone=false :showcase=true v-for="request in requests" v-bind:key="request.case_id"></request>
     </div>
 </template>
 
