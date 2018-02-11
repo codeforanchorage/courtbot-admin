@@ -15,7 +15,7 @@ module.exports = function (config) {
     customLaunchers: {
         MyHeadlessChrome: {
           base: 'ChromeHeadless',
-          flags: ['--no-sandbox', '--remote-debugging-port=9223']
+          flags: ['--no-sandbox']
         }
       },
     frameworks: ['mocha', 'sinon-chai'],
