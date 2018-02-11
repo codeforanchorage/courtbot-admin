@@ -19,10 +19,9 @@
 </template>
 
 <script>
-import config from '@/config.js'
 import notification from '@/components/notificationList/notification_list_item'
 
-const apiURL = config.API_URL + 'notifications_by_day'
+const apiURL = 'notifications_by_day'
 
 export default {
     name: 'notifications_list',

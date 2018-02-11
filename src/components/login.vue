@@ -25,10 +25,9 @@
 </template>
 
 <script>
-import config from '@/config.js'
 import auth from '@/auth.js'
 
-const apiURL = config.API_URL + 'admin_login'
+const apiURL = 'admin_login'
 
 export default {
     name: 'login',

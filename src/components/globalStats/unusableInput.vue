@@ -12,9 +12,7 @@
 </template>
 
 <script>
-import config from '@/config.js'
-
-const apiURL = config.API_URL + 'unusable_input'
+const apiURL = 'unusable_input'
 
 export default {
     name: 'unusable_input',

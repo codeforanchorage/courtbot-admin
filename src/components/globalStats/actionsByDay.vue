@@ -6,10 +6,9 @@
 </template>
 
 <script>
-import config from '@/config.js'
 import * as d3 from 'd3'
 
-const apiURL = config.API_URL + 'actions_by_day'
+const apiURL = 'actions_by_day'
 
 export default {
     name: 'action_by_day',

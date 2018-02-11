@@ -19,9 +19,8 @@
 <script>
 import phonelog from './phone_log.vue'
 import request_list from './request_list_by_phone.vue'
-import config from '@/config.js'
 
-const apiURL = config.API_URL + 'requests_by_phone'
+const apiURL =  'requests_by_phone'
 
 export default  {
     name: "phone_search",

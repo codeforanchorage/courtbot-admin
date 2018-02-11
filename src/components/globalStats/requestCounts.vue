@@ -13,9 +13,7 @@
 </template>
 
 <script>
-import config from '@/config.js'
-
-const apiURL = config.API_URL + 'request_counts'
+const apiURL = 'request_counts'
 
 export default {
     name: 'reminder_counts',

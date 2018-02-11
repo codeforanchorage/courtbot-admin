@@ -4,14 +4,30 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import axios from 'axios';
-
+import config from '@/config.js'
 import auth from './auth'
 
 Vue.config.productionTip = false
 //Vue.use(vueResource)
 Vue.use(require('vue-moment'));
 
+/* Make axios available to all components
+   components can simply use `this.$http.get()`
+*/
 Vue.prototype.$http = axios
+
+/* components can make requests relative to this URL */
+axios.defaults.baseURL = config.API_URL;
+
+// Intercept all requests to add auth token //
+axios.interceptors.request.use(
+    config => {
+      config.headers.authorization = 'JWT ' + auth.token;
+      return config;
+    },
+    error => Promise.reject(error)
+  );
+
 /*
     Setup routes that require auth
     This will look at the routes in router.index to see which
@@ -25,17 +41,6 @@ router.beforeEach((to, from, next) => {
         next()
     }
 })
-
-// Intercept all requests to add auth token //
-axios.interceptors.request.use(
-    config => {
-      config.headers.authorization = 'JWT ' + auth.token;
-      return config;
-    },
-    error => Promise.reject(error)
-  );
-
-
 
 /* eslint-disable no-new */
 new Vue({

@@ -12,9 +12,7 @@
 </template>
 
 <script>
-import config from '@/config.js'
-
-const apiURL = config.API_URL + 'runner_last_run'
+const apiURL = 'runner_last_run'
 
 export default {
     name: 'runner_dates',

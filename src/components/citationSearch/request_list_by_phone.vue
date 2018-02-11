@@ -10,9 +10,8 @@
 
 <script>
 import request from './request.vue'
-import config from '@/config.js'
 
-const apiURL = config.API_URL + 'requests_by_phone'
+const apiURL = 'requests_by_phone'
 
 export default {
     name: 'request_by_phone_search',

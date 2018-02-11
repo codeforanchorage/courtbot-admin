@@ -15,7 +15,6 @@
 </template>
 
 <script>
-import config from '@/config.js'
 import barChart from './mixins/barChart.js'
 
 export default {
@@ -29,7 +28,7 @@ export default {
             svg:{},
             axis_group: {},
             size: {height: 300, width: 500},
-            apiURL: config.API_URL + this.apiPath
+            apiURL: this.apiPath
         }
     },
     mixins: [barChart],
