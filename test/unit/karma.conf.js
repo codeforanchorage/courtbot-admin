@@ -13,7 +13,7 @@ module.exports = function (config) {
     // 2. add it to the `browsers` array below.
     browsers: ['MyChromeHeadless'],
     customLaunchers: {
-        MyHeadlessChrome: {
+        MyChromeHeadless: {
           base: 'ChromeHeadless',
           flags: ['--no-sandbox']
         }
