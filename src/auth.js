@@ -7,7 +7,6 @@
 
 class auth{
     constructor(){
-        console.log("token: ", this.token)
         this.loggedIn = !!this.token
         this.user = this.loggedIn ? this.getuser() : null
     }

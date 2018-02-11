@@ -1,22 +1,22 @@
 <template>
-<div id="loginContainer">
-    <form id="login" v-on:submit.prevent="sendLogin($event)" >
-        <fieldset>
-            <legend>Login</legend>
-            <p>
-                <input type="text" class="header"  v-model="user" required />
-                <label>User Name</label>
-            </p>
-            <p>
-                <input type="password" class="header"  v-model="password" required />
-                <label>Password</label>
-            </p>
-            <button type="submit" v-if="!loading">Login</button>
-            <div id="loading" v-if="loading">Loading</div>
-            <span id="error" v-if="error">{{error}}</span>
-        </fieldset>
-    </form>
-</div>
+    <div id="loginContainer">
+        <form id="login" v-on:submit.prevent="sendLogin($event)" >
+            <fieldset>
+                <legend>Login</legend>
+                <p>
+                    <input type="text" class="header"  v-model="user" required />
+                    <label>User Name</label>
+                </p>
+                <p>
+                    <input type="password" class="header"  v-model="password" required />
+                    <label>Password</label>
+                </p>
+                <button type="submit" v-if="!loading">Login</button>
+                <div id="loading" v-if="loading">Loading</div>
+                <span id="error" v-if="error">{{error}}</span>
+            </fieldset>
+        </form>
+    </div>
 </template>
 
 <script>
@@ -47,7 +47,6 @@ export default {
                     auth.token =  r.token
                     this.$router.push('/')
                 }
-                console.log("recieved token", r)
                 })
             .catch(err => {
                 this.loading = false

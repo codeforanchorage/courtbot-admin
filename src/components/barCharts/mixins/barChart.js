@@ -33,7 +33,6 @@ export default  {
             .attr("height", this.size.height + this.margin.top + this.margin.bottom)
             .append("g")
             .attr("transform", `translate(${this.margin.left} , ${this.margin.top})`);
-            console.log(this.size)
             this.scale.y = d3.scaleBand().padding(0.1)
             .range([0, this.size.height])
 
