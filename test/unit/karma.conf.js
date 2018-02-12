@@ -15,7 +15,7 @@ module.exports = function (config) {
     customLaunchers: {
         MyChromeHeadless: {
           base: 'ChromeHeadless',
-          flags: ['--no-sandbox']
+          flags: ['--no-sandbox'] // needed for Travis CI to properly start Chrome
         }
       },
     frameworks: ['mocha', 'sinon-chai'],
