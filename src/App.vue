@@ -6,10 +6,10 @@
             {{auth.user}} <button v-on:click="logout">logout</button>
         </div>
     </div>
-    <form  v-on:submit.prevent="goToCitation($event)" v-if = 'auth.loggedIn'>
-            <input type="text" class="header"  v-model="citationNumber" required />
-            <label>Search Citation ID</label>
-        </form>
+    <form  v-on:submit.prevent="goToCitation($event)" v-if='auth.loggedIn'>
+        <input type="text" class="header"  v-model="citationNumber" required />
+        <label>Search Citation ID</label>
+    </form>
     <router-view id="routerview"></router-view>
     <div id="footer">
          A <a href="http://codeforanchorage.org">Code for Anchorage</a> project

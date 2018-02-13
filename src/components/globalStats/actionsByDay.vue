@@ -49,7 +49,6 @@ export default {
             this.axis.x = d3.axisBottom(this.scale.x).tickFormat(d3.timeFormat('%m-%d'))
             const t = d3.transition().duration(750);
 
-
             d3.select('#chart_time').select('svg')
             .transition(t)
             .attr("width", width + this.margin.left + this.margin.right)

@@ -9,9 +9,6 @@ import unusableInput from '@/components/globalStats/unusableInput'
 
 import axios from 'axios';
 
-import config from '@/config'
-const apiURL = 'hearing_counts'
-
 /* Setup axios on the vue prototype like we are in components */
 Vue.prototype.$http = axios
 Vue.use(require('vue-moment'))
