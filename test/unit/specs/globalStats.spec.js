@@ -5,6 +5,7 @@ import moxios from 'moxios';
 import caseCounts from '@/components/globalStats/caseCounts'
 import requestCounts from '@/components/globalStats/requestCounts'
 import runnerDates from '@/components/globalStats/runnerDates'
+import unusableInput from '@/components/globalStats/unusableInput'
 
 import axios from 'axios';
 
@@ -70,6 +71,20 @@ describe('Status Counts', () => {
             done()
         })
         const wrapper = shallow(runnerDates)
+        const vm = wrapper.vm
+    })
+    it('Should report the correct unusable input', (done) => {
+        moxios.stubRequest(/unusable_input/, {
+            status: 200,
+            response: [{body: "bad_input", count:10},{body: "more bad input", count:5}],
+        })
+        moxios.wait(function () {
+            const listElements = vm.$el.querySelectorAll("ul li")
+            expect(listElements[0].textContent).to.include('bad_input ( 10 )')
+            expect(listElements[1].textContent).to.include('more bad input ( 5 )')
+            done()
+        })
+        const wrapper = shallow(unusableInput)
         const vm = wrapper.vm
     })
 })

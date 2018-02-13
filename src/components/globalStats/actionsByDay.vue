@@ -43,7 +43,6 @@ export default {
             .catch(e => console.log("error: ", e))
         },
         resize: function(){
-            console.log("Resize called", this.size.width)
             let width = this.size.width - this.margin.left - this.margin.right
             let height =  this.size.height - this.margin.top - this.margin.bottom
             this.scale.x = d3.scaleTime().range([0, width])
