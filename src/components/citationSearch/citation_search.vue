@@ -7,12 +7,7 @@
         <h3>Query: {{citationNumber}}</h3>
         <div id="listing">
             <div id="case_record">
-                <citation :record="record" v-for="record in records" v-bind:key="record.id"></citation>
-                <div class="no_records" v-if="records.length < 1">
-                    No records were found for identifier: {{citationNumber}}.<br />
-                    This search only searches the current CSV data which changes daily. Notifications and
-                    requests may still be associated with this identifier.
-                </div>
+                <citation :citationNumber="citationNumber"></citation>
             </div>
             <div id="request_list">
                 <request_list :citationNumber="citationNumber"></request_list>
@@ -26,35 +21,13 @@
 import citation from './citation.vue'
 import request_list from './request_list_by_citation.vue'
 
-const apiURL =  'case'
-
 export default {
     name: 'citation_search',
-    data () {
-        return {
-            records:{},
-        }
-    },
     props: ['citationNumber'],
     components:{
         'citation': citation,
         'request_list': request_list
     },
-    methods: {
-        findCitation: function(id){
-            this.$http.get(apiURL,  {params: {case_id: this.citationNumber}})
-            .then(r => this.records = r.data)
-            .catch(e => console.log("error: ", e))
-        }
-    },
-    watch: {
-        'citationNumber': function(){
-            this.findCitation(this.citationNumber)
-        }
-    },
-    beforeMount: function(){
-        this.findCitation(this.citationNumber)
-    }
 }
 
 </script>
@@ -72,13 +45,7 @@ export default {
     #case_record{
         flex-basis: 30%;
     }
-    div.no_records {
-        margin-top:20px;
-        padding: 5px;
-        border-radius: 6px;
-        padding: 25px;
-        width: 80%;
-    }
+
     @media screen and (max-width: 800px){
          #listing{
              box-sizing: border-box;
