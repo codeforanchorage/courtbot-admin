@@ -6,7 +6,7 @@
     <h1>Runners</h1>
     <ul>
         <li v-for="runner in runners" v-bind:key="runner.runner"><b>{{runner.runner | _tail}}:</b><br>
-        {{runner.date | moment('MMM DD, YYYY, h:mm a')}} </li>
+        {{runner.date | moment('MMM DD, YYYY, h:mm a')}}</li>
     </ul>
   </div>
 </template>
