@@ -5,7 +5,7 @@
     <div id="citation">
         <div id="record" :record="record" v-for="record in records" v-bind:key="record.id">
             <h4>{{record.defendant}}</h4>
-            <h5 v-if="record.type"> {{record.type}}</h5>
+            <h5 v-if="record.type">{{record.type}}</h5>
             {{record.date | moment("dddd, MMMM Do YYYY")}} | {{record.date | moment("h:mm A")}}<br>
             {{record.room}}
             <div class="citationDetail" v-for="citation in record.citations" v-bind:key='citation.id'>
