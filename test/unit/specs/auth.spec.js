@@ -8,7 +8,7 @@ describe("Auth Module", function(){
     afterEach(function(){
         auth.logOut()
     })
-    it("loggedIn should be false when token is present", function(){
+    it("loggedIn should be false when token is not present", function(){
         expect(auth.loggedIn).to.equal(false)
     })
     it("setToken/LogOut should set/remove local storage token", function(){
