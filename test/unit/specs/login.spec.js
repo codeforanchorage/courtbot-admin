@@ -15,6 +15,7 @@ describe('Login Panel', () => {
     })
     afterEach(function(){
         moxios.uninstall()
+        auth.logOut()
     })
     it('Should pass username and password to api', (done) => {
         const user = 'some_user'
