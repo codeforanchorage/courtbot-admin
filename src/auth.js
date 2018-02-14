@@ -21,6 +21,7 @@ class auth{
     logOut(){
         localStorage.removeItem('token')
         this.loggedIn = false
+        this.user = null
     }
     getuser(){
         if(!this.token) return null;

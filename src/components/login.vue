@@ -9,11 +9,11 @@
             <fieldset>
                 <legend>Login</legend>
                 <p>
-                    <input type="text" class="header"  v-model="user" required />
+                    <input type="text" class="header"  v-model="user"  />
                     <label>User Name</label>
                 </p>
                 <p>
-                    <input type="password" class="header"  v-model="password" required />
+                    <input type="password" class="header"  v-model="password"  />
                     <label>Password</label>
                 </p>
                 <button type="submit" v-if="!loading">Login</button>
@@ -54,7 +54,7 @@ export default {
                 })
             .catch(err => {
                 this.loading = false
-                this.error = err.body.message
+                this.error = "Login Failed"
                 this.password = ''
                 e.target.reset() // brings placeholder text back in safari
                 e.target.querySelector("input").blur()
