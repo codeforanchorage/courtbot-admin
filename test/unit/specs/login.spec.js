@@ -1,11 +1,7 @@
-import Vue from 'vue'
 import { shallow } from '@vue/test-utils'
 import moxios from 'moxios';
 import login from '@/components/login'
-import axios from 'axios';
 import Auth from "@/auth.js"
-/* Setup axios on the vue prototype like we are in components */
-Vue.prototype.$http = axios
 
 const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiSm9obiBEb2UifQ.d6cxJKDM10h6py25X4TTVvMuy-NtecFjcuTBukR_SXY"
 

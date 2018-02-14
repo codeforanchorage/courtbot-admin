@@ -11,3 +11,23 @@ testsContext.keys().forEach(testsContext)
 // you want coverage for.
 const srcContext = require.context('../../src', true, /^\.\/(?!main(\.js)?$)/)
 srcContext.keys().forEach(srcContext)
+
+
+import axios from 'axios';
+import config from '@/config.js'
+import VueMoment from 'vue-moment'
+import moment from 'moment-timezone'
+
+/**
+ * Basic setup of vue object so we don't need to
+ * do it in each test file.
+ */
+
+/* Setup axios on the vue prototype like we are in components */
+Vue.prototype.$http = axios
+
+moment.tz.setDefault(config.TIME_ZONE);
+
+Vue.use(VueMoment, {
+    moment,
+})

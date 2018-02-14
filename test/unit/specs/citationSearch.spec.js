@@ -1,14 +1,6 @@
-import Vue from 'vue'
 import { shallow } from '@vue/test-utils'
 import moxios from 'moxios';
-
 import citation from '@/components/citationSearch/citation'
-
-import axios from 'axios';
-
-/* Setup axios on the vue prototype like we are in components */
-Vue.prototype.$http = axios
-Vue.use(require('vue-moment'))
 
 const citationReturn = [{
     case_id: '4EM-19-10065CR',

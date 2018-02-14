@@ -1,4 +1,3 @@
-import Vue from 'vue'
 import { shallow } from '@vue/test-utils'
 import moxios from 'moxios';
 
@@ -6,12 +5,6 @@ import caseCounts from '@/components/globalStats/caseCounts'
 import requestCounts from '@/components/globalStats/requestCounts'
 import runnerDates from '@/components/globalStats/runnerDates'
 import unusableInput from '@/components/globalStats/unusableInput'
-
-import axios from 'axios';
-
-/* Setup axios on the vue prototype like we are in components */
-Vue.prototype.$http = axios
-Vue.use(require('vue-moment'))
 
 describe('Status Counts', () => {
     beforeEach(function(){
