@@ -15,6 +15,7 @@
   "dependencies": {
     "axios": "^0.17.1",
     "d3": "^4.11.0",
+    "moment-timezone": "^0.5.14",
     "vue": "^2.4.2",
     "vue-moment": "^2.1.0",
     "vue-router": "^2.7.0"

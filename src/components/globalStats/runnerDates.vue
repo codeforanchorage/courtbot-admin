@@ -18,7 +18,7 @@ export default {
     name: 'runner_dates',
     data () {
         return {
-            runners:[],
+            runners:[]
         }
     },
     methods: {

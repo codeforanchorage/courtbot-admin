@@ -7,11 +7,16 @@ import router from './router'
 import axios from 'axios';
 import config from '@/config.js'
 import auth from './auth'
+import VueMoment from 'vue-moment'
+import moment from 'moment-timezone'
+moment.tz.setDefault(config.TIME_ZONE);
+
 
 Vue.config.productionTip = false
-//Vue.use(vueResource)
-Vue.use(require('vue-moment'));
 
+Vue.use(VueMoment, {
+    moment,
+})
 /* Make axios available to all components
    components can simply use `this.$http.get()`
 */

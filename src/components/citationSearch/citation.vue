@@ -29,7 +29,7 @@ export default {
     props: ['citationNumber'],
      data () {
         return {
-            records:{},
+            records:{}
         }
     },
     methods: {
