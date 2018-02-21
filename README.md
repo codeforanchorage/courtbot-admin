@@ -5,6 +5,8 @@ Interface for courtbot app admin and logging.
 ### Configuration
 The only configuration requred is the URL of the admin API set with `API_URL` in `config.js`. This should point to the courtbot admin api root.
 
+This admin dashboard will ask the user to login. The login credentials are determined by the courtbot app, not by this app.
+
 ## Build Setup
 
 ``` bash
