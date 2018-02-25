@@ -6,7 +6,14 @@
 </template>
 
 <script>
-import * as d3 from 'd3'
+
+import {max as d3max, extent} from 'd3-array'
+import {transition} from 'd3-transition'
+import {select} from 'd3-selection'
+import {axisBottom, axisLeft} from 'd3-axis'
+import {scaleTime, scaleLinear, scaleOrdinal, schemeCategory20} from 'd3-scale'
+import {timeFormat} from 'd3-time-format'
+import {stack as d3Stack, stackOrderNone, stackOffsetNone, area, curveBasis} from 'd3-shape'
 
 const apiURL = 'actions_by_day'
 
@@ -45,11 +52,11 @@ export default {
         resize: function(){
             let width = this.size.width - this.margin.left - this.margin.right
             let height =  this.size.height - this.margin.top - this.margin.bottom
-            this.scale.x = d3.scaleTime().range([0, width])
-            this.axis.x = d3.axisBottom(this.scale.x).tickFormat(d3.timeFormat('%m-%d'))
-            const t = d3.transition().duration(750);
+            this.scale.x = scaleTime().range([0, width])
+            this.axis.x = axisBottom(this.scale.x).tickFormat(timeFormat('%m-%d'))
+            const t = transition().duration(750);
 
-            d3.select('#chart_time').select('svg')
+            select('#chart_time').select('svg')
             .transition(t)
             .attr("width", width + this.margin.left + this.margin.right)
             this.drawChart(this.action_counts)
@@ -57,16 +64,16 @@ export default {
         initChart: function(){
             let width = this.size.width - this.margin.left - this.margin.right
             let height =  this.size.height - this.margin.top - this.margin.bottom
-            this.scale.x = d3.scaleTime().range([0, width])
-            this.axis.x = d3.axisBottom(this.scale.x).tickFormat(d3.timeFormat('%m-%d'))
+            this.scale.x = scaleTime().range([0, width])
+            this.axis.x = axisBottom(this.scale.x).tickFormat(timeFormat('%m-%d'))
 
-            this.scale.y = d3.scaleLinear().range([height, 0])
-            this.axis.y = d3.axisLeft(this.scale.y)
+            this.scale.y = scaleLinear().range([height, 0])
+            this.axis.y = axisLeft(this.scale.y)
 
-            this.scale.z = d3.scaleOrdinal(d3.schemeCategory20);
+            this.scale.z = scaleOrdinal(schemeCategory20);
 
             /* Make chart legend */
-            let element = d3.select("#chart_time").append("ul")
+            let element = select("#chart_time").append("ul")
                 .attr("class", "legend").selectAll('.legend_item')
                 .data(this.action_keys).enter()
                 .append("li").attr('class', 'legend_item')
@@ -80,7 +87,7 @@ export default {
             element.append('span').text(d => d.replace('_', ' '))
 
             /* root element */
-            this.svg = d3.select("#chart_time").append('svg')
+            this.svg = select("#chart_time").append('svg')
                 .attr("width", width + this.margin.left + this.margin.right)
                 .attr("height", height + this.margin.top + this.margin.bottom)
                 .append("g")
@@ -95,7 +102,7 @@ export default {
                 .attr("class", "axis axis--y")
         },
         drawChart: function(data){
-            const t = d3.transition()
+            const t = transition()
                 .duration(750);
 
             data.forEach(item => {
@@ -105,26 +112,26 @@ export default {
                 this.action_keys.forEach(key => { if(!item[key]) item[key] = 0 })
             })
 
-            this.scale.x.domain(d3.extent(data.map(i => i.date)))
+            this.scale.x.domain(extent(data.map(i => i.date)))
             .ticks(data.length)
 
             this.axis_group.x
             .transition(t)
             .call(this.axis.x);
 
-            this.scale.y.domain([0, d3.max(data, i => i.total)])
+            this.scale.y.domain([0, d3max(data, i => i.total)])
 
             this.axis_group.y
             .transition(t)
             .call(this.axis.y)
 
-            let stack = d3.stack()
+            let stack = d3Stack()
             .keys(this.action_keys)
-            .order(d3.stackOrderNone)
-            .offset(d3.stackOffsetNone)
+            .order(stackOrderNone)
+            .offset(stackOffsetNone)
 
-            let area_line = d3.area()
-            .curve(d3.curveBasis)
+            let area_line = area()
+            .curve(curveBasis)
             .x(d => this.scale.x(d.data.date))
             .y0(d => this.scale.y(isNaN(d[0]) ? 0 : d[0]))
             .y1(d => this.scale.y( isNaN(d[1]) ? 0 : d[1]))

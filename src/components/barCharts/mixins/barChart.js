@@ -1,4 +1,8 @@
-import * as d3 from 'd3'
+import {max as d3max} from 'd3-array'
+import {transition} from 'd3-transition'
+import {select} from 'd3-selection'
+import {axisLeft} from 'd3-axis'
+import {scaleBand, scaleLinear} from 'd3-scale'
 /**
  * This is meant to be uses as a mixin for other components
  */
@@ -27,15 +31,15 @@ export default  {
             this.size.width = this.size.width - this.margin.left - this.margin.right
             this.size.height =  this.size.height - this.margin.top - this.margin.bottom
 
-            this.svg = d3.select(this.$el).select('svg')
+            this.svg = select(this.$el).select('svg')
             .attr("width", this.size.width + this.margin.left + this.margin.right)
             .attr("height", this.size.height + this.margin.top + this.margin.bottom)
             .append("g")
             .attr("transform", `translate(${this.margin.left} , ${this.margin.top})`);
-            this.scale.y = d3.scaleBand().padding(0.1)
+            this.scale.y = scaleBand().padding(0.1)
             .range([0, this.size.height])
 
-            this.axis.y = d3.axisLeft(this.scale.y)
+            this.axis.y = axisLeft(this.scale.y)
             .tickFormat(d => d.replace('_', ' '))
 
             var STYLE_MODULE_NAME = this.$el.attributes[0].name;
@@ -45,11 +49,11 @@ export default  {
             .attr(STYLE_MODULE_NAME, '')
         },
         chartDraw: function(data){
-            const t = d3.transition()
+            const t = transition()
             .duration(750);
 
-            this.scale.x = d3.scaleLinear()
-            .domain([0, d3.max(data, d => parseInt(d.count))])
+            this.scale.x = scaleLinear()
+            .domain([0, d3max(data, d => parseInt(d.count))])
             .range([0, this.size.width]);
 
             this.scale.y.domain(data.map(d => d.type))
