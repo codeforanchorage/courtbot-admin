@@ -14,7 +14,7 @@ module.exports = {
     start_process: false,
     server_path: require('selenium-server').path,
     host: '127.0.0.1',
-    port: 4444,
+    port: 9515,
     cli_args: {
       'webdriver.chrome.driver': chromedrive.path
     }
