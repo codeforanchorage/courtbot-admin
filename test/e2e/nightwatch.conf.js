@@ -7,14 +7,14 @@ module.exports = {
   src_folders: ['test/e2e/specs'],
   output_folder: 'test/e2e/reports',
   custom_assertions_path: ['test/e2e/custom-assertions'],
-  globals_path: 'test/e2e/globals.js',
+  globals_path: './globals.js',
   /* selenum is difficult to run from node on travis ci
      so this just uses the standalone chrome driver */
   selenium: {
     start_process: false,
     server_path: require('selenium-server').path,
     host: '127.0.0.1',
-    port: 4444,
+    port: 9515,
     cli_args: {
       'webdriver.chrome.driver': chromedrive.path
     }
@@ -23,7 +23,7 @@ module.exports = {
   test_settings: {
     default: {
       selenium_port: 9515,
-      selenium_host: 'localhost',
+      selenium_host: '127.0.0.1',
       default_path_prefix: "",
       desiredCapabilities: {
         browserName: "chrome",
